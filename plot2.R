@@ -26,3 +26,7 @@ data_feb$f_date <- dmy_hms(data_feb$f_date)
 #linear ploting 
 plot(data_feb$f_date, data_feb$Global_active_power, 
      type = "l", xlab = "", ylab = "Global Active Power")
+
+#saving png file in plots folder
+dev.copy(png, file = "plots/plot2.png")
+dev.off()
