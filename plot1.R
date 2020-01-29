@@ -2,11 +2,6 @@ library(readr)
 library(dplyr)
 library(lubridate)
 
-#create plots folder
-if (dir.exists("plots") == FALSE) {
-  dir.create("plots")
-}
-
 #data load
 data_path <- list.files(pattern = "household_power_consumption.txt",
                         recursive = TRUE,
@@ -23,7 +18,7 @@ hist(data_feb$Global_active_power, col = "red",
      main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)")
 
-#saving png file in plots folder
-dev.copy(png, file = "plots/plot1.png")
+#saving png file
+dev.copy(png, file = "plot1.png")
 dev.off()
 
